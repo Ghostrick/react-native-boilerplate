@@ -3,24 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "1.14.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-react-native-classname-to-style": "^1.2.1",
+    "babel-plugin-react-native-platform-specific-extensions": "^1.1.0",
+    "eslint": "^4.19.1",
+    "flow-bin": "^0.72.0",
     "jest-expo": "~27.0.0",
+    "react-native-scripts": "1.14.0",
+    "react-native-stylus-transformer": "^1.0.0",
     "react-test-renderer": "16.3.1"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "main": "./src/components/App.js",
   "scripts": {
     "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest"
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint src",
+    "typecheck": "./node_modules/.bin/flow"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "moduleNameMapper": {
+      "\\.styl$": "<rootDir>/src/__mock__/stylus.js"
+    }
   },
   "dependencies": {
     "expo": "^27.0.1",
+    "mobx": "^4.2.1",
+    "mobx-react": "^5.1.2",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "react-navigation": "^2.0.1"
   }
 }

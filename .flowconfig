@@ -1,0 +1,21 @@
+[ignore]
+.*/node_modules/.*
+
+[include]
+
+[libs]
+node_modules/react-native/Libraries/react-native/react-native-interface.js
+node_modules/react-native/flow
+flow-typed
+
+[options]
+module.name_mapper.extension='styl' -> 'stylModule'
+module.name_mapper='^\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+module.file_ext=.styl
+esproposal.decorators=ignore
+
+[version]
+^0.72.0
